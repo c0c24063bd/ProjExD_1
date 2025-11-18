@@ -26,16 +26,17 @@ def main():
         screen.blit(bg_img, [-x+3200, 0])
 
         key_lst = pg.key.get_pressed()#練10↓
-        if key_lst[pg.K_UP]:#演習1
-            kk_rct.move_ip((-1,-1))
+        a = kk_rct.move_ip#練２
+        if key_lst[pg.K_UP]:
+            a(-1,-1)
         if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((-1,+1))
+            a(-1,+1)
         if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1,0))
+            a(-1,0)
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((+1,0))
+            a(+1,0)
         else:
-            kk_rct.move_ip((-1,0))
+            a(-1,0)
         screen.blit(kk_img, kk_rct)#練4、練10↑
         pg.display.update()
         tmr += 1        
