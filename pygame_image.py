@@ -17,10 +17,11 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        x = tmr
+        x = tmr % 3200 #練習9
         screen.blit(bg_img, [-x, 0])#背景画像Surfaceをスクリーンにblit
         screen.blit(bg_img, [-x+1600, 0])#練7
         screen.blit(bg_img2, [-x+1600, 0])#練8
+        screen.blit(bg_img, [-x+3200, 0])
         screen.blit(kk_img, [300,200])#練4
         pg.display.update()
         tmr += 1        
